@@ -24,9 +24,9 @@ Playback is also controlled with websocket messages. Again, these will typically
 ```json
 {
     "action": "play",
-    "start": 2016-01-15T14:32:24Z
-    "end": 2016-01-15T14:33:24Z
-    "speed": 1
+    "start": "2016-01-15T14:32:24Z",
+    "end": "2016-01-15T14:33:24Z",
+    "speed": 1,
     "loop": False
 }
 ```
