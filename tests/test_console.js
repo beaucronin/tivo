@@ -1,11 +1,9 @@
-var Controller = require('./controller.js').Controller,
-	readers = require('./readers.js'),
-	writers = require('./writers.js');
+var tivo = require('../index');
 
 var filename = 'testEvents.json';
-var reader = new readers.FileReader(filename),
-	writer = new writers.ConsoleWriter(),
-	controller = new Controller(reader, writer);
+var reader = new tivo.readers.FileReader(filename),
+	writer = new tivo.writers.ConsoleWriter(),
+	controller = new tivo.Controller(reader, writer);
 
 controller.play({
 	start: new Date('2016-01-01T00:00:00.000Z'),

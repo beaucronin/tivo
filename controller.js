@@ -94,4 +94,4 @@ Controller.prototype = {
 	}
 }
 
-module.exports.Controller = Controller;
+module.exports = Controller;
