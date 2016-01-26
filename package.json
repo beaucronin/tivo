@@ -1,6 +1,6 @@
 {
   "name": "tivo",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "streaming event server that supports DVR functionality: replay, ff, rew, loop",
   "main": "server.js",
   "dependencies": {
@@ -8,6 +8,8 @@
     "underscore": "~1.7.0",
     "ws": "~0.4.32",
     "express": "~4.8.8",
+    "twitter": "~0.2.9",
+    "pg": "~4.4.3"
   },
   "devDependencies": {},
   "author": "Beau Cronin",
