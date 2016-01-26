@@ -20,7 +20,15 @@ var WebSocketWriter = function(httpServer) {
 }
 
 WebSocketWriter.prototype = {
+	constructor: WebSocketWriter,
 
+	writeEvent: function(e) {
+
+	},
+
+	writeMessage: function(msg) {
+		
+	}
 }
 
 module.exports.ConsoleWriter = ConsoleWriter;
