@@ -21,6 +21,7 @@ FileReader.prototype = {
 					objFunc(obj.event_data);
 				}
 			});
+			cleanupFunc();
 		})
 	}
 }
