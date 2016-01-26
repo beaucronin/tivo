@@ -1,24 +1,22 @@
 {
   "name": "tivo",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "streaming event server that supports DVR functionality: replay, ff, rew, loop",
   "main": "index.js",
-  "scripts": {
-
-  },
   "respository": {
     "type": "git",
     "url": "https://github.com/beaucronin/tivo.git"
   },
   "dependencies": {
-    "http-server": "~0.6.1",
     "underscore": "~1.7.0",
     "ws": "~0.4.32",
-    "express": "~4.8.8",
-    "twitter": "~0.2.9",
     "pg": "~4.4.3"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "express": "~4.8.8",
+    "twitter": "~0.2.9",
+    "http-server": "~0.6.1"    
+  },
   "author": "Beau Cronin <beau.cronin@gmail.com>",
-  "license": "Apache"
+  "license": "Apache-2.0"
 }
