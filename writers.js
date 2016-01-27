@@ -1,3 +1,5 @@
+var WebSocketServer = require('ws').Server;
+
 var ConsoleWriter = function() {
 
 }
@@ -14,20 +16,19 @@ ConsoleWriter.prototype = {
 	}
 }
 
-var WebSocketWriter = function(httpServer) {
-	this.httpServer = httpServer;
-	this.socketServer = new WebSocketServer({ server: this.httpServer });
+var WebSocketWriter = function(ws) {
+	this.ws = ws;
 }
 
 WebSocketWriter.prototype = {
 	constructor: WebSocketWriter,
 
 	writeEvent: function(e) {
-
+		this.ws.send(JSON.stringify(e));
 	},
 
 	writeMessage: function(msg) {
-		
+		this.ws.send(JSON.stringify(msg));
 	}
 }
 

@@ -11,11 +11,23 @@ var Controller = function(reader, writer) {
 Controller.prototype = {
 	constructor: Controller,
 
+	executeCommand: function(command) {
+		if (command.command.toLowerCase() == 'play')
+			this.play(command)
+		else if (command.command.toLowerCase() == 'stop')
+			this.stop(command)
+	},
+
 	play: function(command) {
 		this.clearTimerPool();
 		var startTime = command.start,
 			endTime = command.end;
-		
+
+		if (typeof startTime === 'string' || startTime instanceof String)
+			startTime = new Date(startTime);
+		if (typeof endTime === 'string' || endTime instanceof String)
+			endTime = new Date(endTime);
+
 		var speed = 1.0;
 		if ('speed' in command) 
 			speed = command.speed;
