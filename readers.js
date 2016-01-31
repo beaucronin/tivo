@@ -12,6 +12,7 @@ FileReader.prototype = {
 	getEvents: function(startTime, endTime, objFunc, cleanupFunc) {
 		fs.readFile(this.filename, (err, data) => {
 			if (err) throw err;
+			var count = 0;
 			eventsObj = JSON.parse(data);
 			_.each(eventsObj, function(obj) {
 				var eventDate = new Date(obj.event_date);
@@ -19,8 +20,10 @@ FileReader.prototype = {
 				if (eventDate >= startTime && eventDate <= endTime) {
 					obj.event_data.__event_date = eventDate;
 					objFunc(obj.event_data);
+					count += 1;
 				}
 			});
+			console.log(count + " events found");
 			cleanupFunc();
 		})
 	}
